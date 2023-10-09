@@ -1,35 +1,52 @@
+const Category = require("../../models/Category");
+const Food = require("../../models/Food");
+const Customer = require("../../models/Customer");
+
 exports.getAdminHomePage = async (req, res) => {
-    res.status(200).render("admin/index", {
-        pageName: "adminHome"
-    })
-}
+  const foods = await Food.find();
+  const customers = await Customer.find();
+
+  res.status(200).render("admin/index", {
+    pageName: "adminHome",
+    foods,
+    customers,
+  });
+};
 
 exports.getAdminFoodsPage = async (req, res) => {
-    res.status(200).render("admin/foods", {
-        pageName: "adminFoods"
-    })
-}
+  const categories = await Category.find();
+  const foods = await Food.find().populate("category");
+
+  res.status(200).render("admin/foods", {
+    pageName: "adminFoods",
+    categories,
+    foods,
+  });
+};
 
 exports.getAdminCategoriesPage = async (req, res) => {
-    res.status(200).render("admin/categories", {
-        pageName: "adminCategories"
-    })
-}
+  const categories = await Category.find();
+
+  res.status(200).render("admin/categories", {
+    pageName: "adminCategories",
+    categories,
+  });
+};
 
 exports.getAdminCustomersPage = async (req, res) => {
-    res.status(200).render("admin/customers", {
-        pageName: "adminCustomers"
-    })
-}
+  res.status(200).render("admin/customers", {
+    pageName: "adminCustomers",
+  });
+};
 
 exports.getAdminOrdersPage = async (req, res) => {
-    res.status(200).render("admin/orders", {
-        pageName: "adminOrders"
-    })
-}
+  res.status(200).render("admin/orders", {
+    pageName: "adminOrders",
+  });
+};
 
 exports.getAdminPaymentMethodsPage = async (req, res) => {
-    res.status(200).render("admin/payment-methods", {
-        pageName: "adminPaymentMethods"
-    })
-}
+  res.status(200).render("admin/payment-methods", {
+    pageName: "adminPaymentMethods",
+  });
+};

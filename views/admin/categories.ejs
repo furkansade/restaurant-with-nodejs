@@ -23,55 +23,45 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Table with stripped rows</h5>
+            
+            <div class="row">
+                <div class="col-md-6">
+                  <h5 class="card-title">Categorys</h5>
+                </div>
+                <div class="col-md-6 ">
+                  <h5 class="card-title d-flex justify-content-end mx-3">
+                    <a data-bs-target="#addCategory" data-bs-toggle="modal" class="btn btn-outline-success text-dark">
+                      <i class="bi bi-plus"></i>
+                      Add Category!
+                    </a>
+                  </h5>
+                </div>
+              </div>
 
             <!-- Table with stripped rows -->
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Age</th>
-                  <th scope="col">Start Date</th>
+                  <th scope="col">Category Name</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
+                <% for (let i = 0; i < categories.length; i++) { %>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
+                  <th scope="row"><%= i+1 %></th>
+                  <td><%= categories[i].name %></td>
+                  <td>
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="bi bi-pen"></i>
+                    </a>
+                    <a href="/categories/<%= categories[i]._id %>?_method=DELETE" class="btn btn-outline-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                  </td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>2014-12-05</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>2011-08-12</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>2012-06-11</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>2011-04-19</td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
@@ -84,6 +74,30 @@
     </section>
 
   </main><!-- End #main -->
+
+  <!-- ADD CATEGORY -->
+  <div class="modal fade" id="addCategory" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New Category</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/categories" enctype="multipart/form-data">
+            <div class="form-group">
+              <input type="text" class="form-control"  name="name" placeholder="Category Name" required>
+            </div>
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close!</button>
+            <button type="submit" class="btn btn-outline-success mx-2">Save!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <%- include("templates/_footer") %>
 

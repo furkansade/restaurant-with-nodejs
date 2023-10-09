@@ -45,25 +45,29 @@
                   <th scope="col">#</th>
                   <th scope="col">Photo</th>
                   <th scope="col">Food Name</th>
+                  <th scope="col">Category</th>
                   <th scope="col">Price</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
+                <% for (let i = 0; i < foods.length; i++) { %>
                 <tr>
-                  <th scope="row">1</th>
-                  <td><img src="/admin/assets/img/asd.jpeg" width="80px"></td>
-                  <td>Napoliten Pizza</td>
-                  <td>23.90₺</td>
+                  <th scope="row"><%= i+1 %></th>
+                  <td><img src="<%= foods[i].image %>" width="80px" height="80px"></td>
+                  <td><%= foods[i].title %></td>
+                  <td><%= foods[i].category.name %></td>
+                  <td><%= foods[i].price %>₺</td>
                   <td>
                     <a href="#" class="btn btn-outline-primary">
                         <i class="bi bi-pen"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-danger">
+                    <a href="/foods/<%= foods[i]._id %>?_method=DELETE" class="btn btn-outline-danger">
                         <i class="bi bi-trash"></i>
                     </a>
                   </td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
@@ -86,37 +90,36 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="/doctors" enctype="multipart/form-data">
+          <form method="POST" action="/foods" enctype="multipart/form-data">
             <div class="form-group">
-              <input type="text" class="form-control"  name="foodName" placeholder="Food Name" required>
+              <input type="text" class="form-control"  name="title" placeholder="Food Name" required>
             </div>
            
             <div class="form-group mt-3">
-              <select class="form-select" name="foodCategory" id="">
-                <option value="">Pizza</option>
-                <option value="">Drink</option>
+              <select class="form-select" name="category" id="">
+                <% for(let i = 0; i < categories.length; i++) { %>
+                  <option value="<%= categories[i]._id %>"><%= categories[i].name %></option>
+                  <% } %>
               </select>
             </div>
             <div class="form-group mt-3">
-              <input type="file" name="photo" class="form-control" required>
+              <input type="file" name="image" class="form-control" required>
               <small>Food Photo</small>
             </div>
             <div class="form-group mt-3">
-              <textarea name="foodDescription" id="" class="form-control" placeholder="Food Description" maxlength="150"></textarea>
+              <textarea name="description" id="" class="form-control" placeholder="Food Description" maxlength="150"></textarea>
             </div>
             <div class="form-group mt-3">
               <div class="row">
                 <div class="col-sm-3">
-                    <div class="input-group mb-3 jus">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">₺</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                        <div class="input-group-append">
-                          <span class="input-group-text">.90</span>
-                        </div>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" name="price" placeholder="Food Price">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">₺</span>
                       </div>
+                  </div>
                 </div>
+                
                
               </div>
             </div>

@@ -53,66 +53,21 @@
 	                        <h4><a href="#filter_1" data-bs-toggle="collapse" class="opened">Categories</a></h4>
 	                        <div class="collapse show" id="filter_1">
 	                            <ul>
+									<% for (let i = 0; i < categories.length; i++) { %>
+
 		                        <li>
-		                            <label class="container_check">Pizza - Italian <small>12</small>
+		                            <label class="container_check"><%= categories[i].name %> <small><%= i+7 %></small>
 		                                <input type="checkbox">
 		                                <span class="checkmark"></span>
 		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Japanese - Sushi <small>24</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Burghers <small>23</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Vegetarian <small>11</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
+								</li>
+
+								<% } %>
 		                    </ul>
 	                        </div>
 	                        <!-- /filter_type -->
 	                    </div>
-	                    <!-- /filter_type -->
-	                    <div class="filter_type version_2">
-	                        <h4><a href="#filter_2" data-bs-toggle="collapse" class="opened">Rating</a></h4>
-	                        <div class="collapse show" id="filter_2">
-	                             <ul>
-		                        <li>
-		                            <label class="container_check">Superb 9+ <small>06</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Very Good 8+ <small>12</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Good 7+ <small>17</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                        <li>
-		                            <label class="container_check">Pleasant 6+ <small>43</small>
-		                                <input type="checkbox">
-		                                <span class="checkmark"></span>
-		                            </label>
-		                        </li>
-		                    </ul>
-	                        </div>
-	                    </div>
+	                    
 	                    <!-- /filter_type -->
 	                    <div class="filter_type version_2">
 	                        <h4><a href="#filter_4" data-bs-toggle="collapse" class="closed">Price</a></h4>
@@ -153,180 +108,39 @@
 	            </aside>
 	            <!-- /col -->
 	            <div class="col-lg-9">
+
+					<% for (let i = 0; i < foods.length; i++) { %>
+
 	                <div class="row row_item" data-cue="slideInUp">
 	                    <div class="col-sm-4">
 	                        <figure>
 	                            <span class="ribbon off">-30%</span>
 	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/1.jpg" alt="">
+	                                <img class="img-fluid lazy" src="<%= foods[i].image %>" width="400px" alt="">
 	                            </a>
 	                        </figure>
 	                    </div>
 	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
+	                    	<div class="rating">
+								<span><%= foods[i].category.name %></span>
+							</div>
 	                        <a href="shop-single.html">
-	                            <h3>Soft shell crab</h3>
+	                            <h3><%= foods[i].title %></h3>
 	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
+	                        <p><%= foods[i].description %></p>
 	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
+	                            <span class="new_price"><%= foods[i].price + 20 %>₺</span>
+	                            <span class="old_price"><%= foods[i].price %>₺</span>
 	                        </div>
 	                        <ul>
 	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
 	                        </ul>
 	                    </div>
 	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/2.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Avocado & Mango Salsa</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/3.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Braised Pork Chops</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/4.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Baked Potato Skins</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/5.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Prime Rib</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/6.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Chicken with Garlic</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-	                <div class="row row_item" data-cue="slideInUp">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="shop-single.html">
-	                                <img class="img-fluid lazy" src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/7.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                    	<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i></div>
-	                        <a href="shop-single.html">
-	                            <h3>Terrific Turkey Chili</h3>
-	                        </a>
-	                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">$48.00</span>
-	                            <span class="old_price">$60.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
-	                        </ul>
-	                    </div>
-	                </div>
+
+					<% } %>
+	               
+	               
 	                <!-- /row_item -->
 	               <div class="pagination_fg add_bottom_15" data-cue="slideInUp">
 					    <a href="#">&laquo;</a>
