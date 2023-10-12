@@ -1,5 +1,5 @@
 const Category = require("../../models/Category");
-const Food = require("../../models/Food");
+const Food = require("../../models/Food");  
 
 exports.getHomePage = async (req, res) => {
   const category = await Category.find();

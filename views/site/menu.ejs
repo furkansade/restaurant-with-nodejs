@@ -1,10 +1,4 @@
 <%- include('templates/_header') %>
-
-<body>
-
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div><!-- /Page Preload -->
 				
 	<%- include('templates/_navbar') %>
 
@@ -129,8 +123,8 @@
 	                        </a>
 	                        <p><%= foods[i].description %></p>
 	                        <div class="price_box">
-	                            <span class="new_price"><%= foods[i].price + 20 %>₺</span>
-	                            <span class="old_price"><%= foods[i].price %>₺</span>
+	                            <span class="new_price"><%= foods[i].price %>₺</span>
+	                            <span class="old_price"><%= foods[i].price + 20 %>₺</span>
 	                        </div>
 	                        <ul>
 	                            <li><a href="#0" class="btn_1">Add to cart</a></li>
