@@ -6,8 +6,8 @@ const Schema = mongoose.Schema
 const RestaurantSchema = new Schema({
     name:String,
     logoImage:String,
-    description: String,
-    mail: {
+    about: String,
+    email: {
         type: String,
         required: true,
         unique: true,
