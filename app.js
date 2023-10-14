@@ -9,6 +9,7 @@ const sitePageRoute = require("./routes/site/pageRoute");
 const adminPageRoute = require("./routes/admin/pageRoute");
 const adminFoodRoute = require("./routes/admin/foodRoute");
 const adminCategoryRoute = require("./routes/admin/categoryRoute");
+const adminRestaurantRoute = require("./routes/admin/restaurantRoute")
 
 mongoose.set("strictQuery", false);
 
@@ -40,6 +41,7 @@ app.use("/", sitePageRoute);
 app.use("/admin", adminPageRoute);
 app.use("/foods", adminFoodRoute);
 app.use("/categories", adminCategoryRoute);
+app.use("/restaurant", adminRestaurantRoute)
 
 const PORT = 3000;
 app.listen(PORT, () => {

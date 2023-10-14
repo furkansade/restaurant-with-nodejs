@@ -1,15 +1,20 @@
 const Category = require("../../models/Category");
 const Food = require("../../models/Food");
 const Customer = require("../../models/Customer");
+const Restaurant = require("../../models/Restaurant")
 
 exports.getAdminHomePage = async (req, res) => {
   const foods = await Food.find();
   const customers = await Customer.find();
+  const restaurant = await Restaurant.findOne({
+    _id: "652a566abe19dc349a6eabac"
+  })
 
   res.status(200).render("admin/index", {
     pageName: "adminHome",
     foods,
     customers,
+    restaurant
   });
 };
 
