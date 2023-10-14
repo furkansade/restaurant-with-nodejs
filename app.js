@@ -9,7 +9,9 @@ const sitePageRoute = require("./routes/site/pageRoute");
 const adminPageRoute = require("./routes/admin/pageRoute");
 const adminFoodRoute = require("./routes/admin/foodRoute");
 const adminCategoryRoute = require("./routes/admin/categoryRoute");
-const adminRestaurantRoute = require("./routes/admin/restaurantRoute")
+const adminRestaurantRoute = require("./routes/admin/restaurantRoute");
+
+const Restaurant = require("./models/Restaurant");
 
 mongoose.set("strictQuery", false);
 
@@ -34,6 +36,25 @@ app.use(
   })
 );
 
+global.restaurant = null;
+
+const getRestaurantData = () => {
+  return Restaurant.findOne({_id:"652a566abe19dc349a6eabac"}).exec();
+};
+
+// Kullanım
+getRestaurantData()
+  .then((data) => {
+    global.restaurant = data;
+  })
+  .catch((error) => {
+
+  });
+
+
+
+
+
 //SITE ROUTES
 app.use("/", sitePageRoute);
 
@@ -41,7 +62,7 @@ app.use("/", sitePageRoute);
 app.use("/admin", adminPageRoute);
 app.use("/foods", adminFoodRoute);
 app.use("/categories", adminCategoryRoute);
-app.use("/restaurant", adminRestaurantRoute)
+app.use("/restaurant", adminRestaurantRoute);
 
 const PORT = 3000;
 app.listen(PORT, () => {
