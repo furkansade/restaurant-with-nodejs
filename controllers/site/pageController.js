@@ -27,3 +27,9 @@ exports.getMenuPage = async (req, res) => {
     categories
   });
 };
+
+exports.getRegisterPage = async (req, res) => {
+  res.status(200).render("site/register", {
+    pageName: "register"
+  })
+}
