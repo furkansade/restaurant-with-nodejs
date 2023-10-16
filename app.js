@@ -19,7 +19,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1:27017/restaurantDB").then(() => {
+mongoose.connect("mongodb+srv://fsade0:jyKNhDKFVqnwBFHt@cluster0.vfb4npw.mongodb.net/restaurant-db?retryWrites=true&w=majority").then(() => {
   console.log("restaurantDB connected successfully");
 });
 
@@ -39,7 +39,7 @@ app.use(
 global.restaurant = null;
 
 const getRestaurantData = () => {
-  return Restaurant.findOne({_id:"652a566abe19dc349a6eabac"}).exec();
+  return Restaurant.findOne({_id:"652c79e68e27e2de946af38a"}).exec();
 };
 
 // Kullanım

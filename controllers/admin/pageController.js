@@ -7,7 +7,7 @@ exports.getAdminHomePage = async (req, res) => {
   const foods = await Food.find();
   const customers = await Customer.find();
   const restaurant = await Restaurant.findOne({
-    _id: "652a566abe19dc349a6eabac"
+    _id: "652c79e68e27e2de946af38a"
   })
 
   res.status(200).render("admin/index", {
