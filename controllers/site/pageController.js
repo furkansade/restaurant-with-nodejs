@@ -2,11 +2,11 @@ const Category = require("../../models/Category");
 const Food = require("../../models/Food");  
 
 exports.getHomePage = async (req, res) => {
-  const category = await Category.find();
+  const foods = await Food.find()
 
   res.status(200).render("site/index", {
     pageName: "home",
-    category,
+    foods,
   });
 };
 

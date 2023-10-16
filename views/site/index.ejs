@@ -16,85 +16,20 @@
 										<p class="owl-slide-animated owl-slide-subtitle">
 											Cooking delicious food since 2005
 										</p>
-										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1 btn_scroll" href="menu-1.html" role="button">Read more</a></div>
+										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1 btn_scroll" href="/menu" role="button">Menu</a></div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--/owl-slide-->
-				<div class="owl-slide cover lazy" data-bg="url(/site/img/slides/slide_home_2.jpg)">
-					<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<div class="container">
-							<div class="row justify-content-center justify-content-md-start">
-								<div class="col-lg-6 static">
-									<div class="slide-text white">
-										<h2 class="owl-slide-animated owl-slide-title">Reserve<br>a Table Now</h2>
-										<p class="owl-slide-animated owl-slide-subtitle">
-											Cooking delicious food since 2005
-										</p>
-										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="reservations.html" role="button">Read more</a></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/owl-slide-->				
-				<div class="owl-slide cover lazy" data-bg="url(/site/img/slides/slide_home_3.jpg)">
-					<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-						<div class="container">
-							<div class="row justify-content-center justify-content-md-start">
-								<div class="col-lg-12 static">
-									<div class="slide-text text-center white">
-										<h2 class="owl-slide-animated owl-slide-title">Enjoy<br>a friends dinner</h2>
-										<p class="owl-slide-animated owl-slide-subtitle">
-											Cooking delicious food since 2005
-										</p>
-										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="menu-1.html" role="button">Read more</a></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--/owl-slide-->
-				</div>
+				
 			</div>
 			<div id="icon_drag_mobile"></div>
 		</div>
 		<!--/carousel-->
 
-		<ul id="banners_grid" class="clearfix">
-			<li>
-				<a href="menu-1.html" class="img_container">
-					<img src="/site/img/banners_cat_placeholder.jpg" data-src="/site/img/banner_1.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Our Menu</h3>
-						<p>View Our Specialites</p>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="order-food.html" class="img_container">
-					<img src="/site/img/banners_cat_placeholder.jpg" data-src="/site/img/banner_2.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Delivery</h3>
-						<p>Home delivery or take away food</p>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="gallery.html" class="img_container">
-					<img src="/site/img/banners_cat_placeholder.jpg" data-src="/site/img/banner_3.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Inside Foores</h3>
-						<p>View the Gallery</p>
-					</div>
-				</a>
-			</li>
-		</ul>
-		<!--/banners_grid -->
+		
 
 		<div class="pattern_2">
 		    <div class="container margin_120_100 home_intro">
@@ -135,7 +70,6 @@
                             <small>Special Offer</small>
                             <h3>Burgher Menu $18 only</h3>
                             <p>Hamburgher, Chips, Mix Sausages, Beer, Muffin</p>
-                            <a href="reservations.html" class="btn_1">Reserve now</a>
                         </div>
                         <figure class="d-none d-lg-block"><img src="/site/img/banner.svg" alt="" width="200" height="200" class="img-fluid"></figure>
                     </div>
@@ -143,6 +77,9 @@
                 </div>
                 <!-- /banner -->
 		        <div class="row magnific-gallery homepage add_bottom_25">
+
+					<% for(let i = 0; i < foods.length; i++) { %>
+
                     <div class="col-lg-6" data-cue="slideInUp">
                         <div class="menu_item">
                             <figure>
@@ -156,85 +93,9 @@
                             <p>Raspberries, Blackberries</p>
                         </div>
                     </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/4.jpg" title="Coconut Tart" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/4.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Coconut Tart</h3><em>$10</em>
-                            </div>
-                            <p>Blueberries, Graham cracker crumbs</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/5.jpg" title="Pumpkin Cookies" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/5.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Pumpkin Cookies</h3><em>$11</em>
-                            </div>
-                            <p>Pumpkin, Sugar, Butter</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/6.jpg" title="Cookies Cream Cheese" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/7.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Cookies Cream Cheese</h3><em>$14</em>
-                            </div>
-                            <p>Sugar, Butter, Eggs</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/8.jpg" title="Chocolate Cupcakes" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/8.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Chocolate Cupcakes</h3><em>$14</em>
-                            </div>
-                            <p>Chocolate, Eggs, Vanilla</p>
-                        </div>
-                    </div>
-                   	<div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/9.jpg" title="Chocolate Cupcakes" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/9.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Chocolate Cupcakes</h3><em>$14</em>
-                            </div>
-                            <p>Chocolate, Eggs, Vanilla</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
-                        <div class="menu_item">
-                            <figure>
-                                <a href="/site/img/menu_items/large/10.jpg" title="Soft shell crab" data-effect="mfp-zoom-in">
-                                    <img src="/site/img/menu_items/menu_items_placeholder.png" data-src="/site/img/menu_items/10.jpg" class="lazy" alt="">
-                                </a>
-                            </figure>
-                            <div class="menu_title">
-                                <h3>Soft shell crab</h3><em>$14</em>
-                            </div>
-                            <p>Chicken, Potato, Salad</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="slideInUp">
+                    
+					<% } %>
+
                         <div class="menu_item">
                             <figure>
                                 <a href="/site/img/menu_items/large/11.jpg" title="Soft shell crab" data-effect="mfp-zoom-in">
@@ -255,14 +116,14 @@
 		</div>
 		<!-- /bg_gray -->
 
-		<div class="call_section lazy" data-bg="url(/site/img/Adsız-2.jpg)">
+		<div class="call_section lazy" data-bg="">
 		    <div class="container clearfix">
 		    	<div class="row justify-content-center">
 			        <div class="col-lg-5 col-md-6 text-center">
 			            <div class="box_1" data-cue="slideInUp">
 			                <h2>Celebrate<span>a Special Event with us!</span></h2>
 			                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-			                <a href="contacts.html" class="btn_1 mt-3">Contact us</a>
+			                <a href="/about" class="btn_1 mt-3">Contact us</a>
 			            </div>
 			        </div>
 			    </div>
