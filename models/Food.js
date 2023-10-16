@@ -6,7 +6,6 @@ const Schema = mongoose.Schema;
 const FoodSchema = new Schema({
   title: {
     type: String,
-    unique: true,
   },
   slug: String,
   description: {
